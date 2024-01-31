@@ -1,35 +1,41 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
+int main() {
+
 	int a, b, c;
-	int max;		//세 숫자 중 가장 큰 값
+	int price;
+	int max;
 
 	cin >> a >> b >> c;
 
-	if (a == b && b == c && a == c)		//같은 눈 3개
+	if (a == b && b == c && c == a) //세개가 같을 때
 	{
-		cout << 10000 + a * 1000;
+		price = 10000 + a * 1000;
+		cout << price;
 	}
-	else if ((a != b) && (b != c) && (c != a))		//모두 다 다른 눈일 때
+	else if (a != b && b != c && c != a) //세개가 다를 때
 	{
-		max = a > b ? ((a > c) ? a : c) : ((b > c) ? b : ((a > c) ? a : c));
-		cout << max * 100;
+		max = a > b ? (a > c ? a : c) : (b > c ? b : c);
+		price = max * 100;
+		cout << price;
 	}
-	else		//같은 눈 2개
+	else
 	{
-		if (a == b && (c != a || c != b))
+		if (a == b)
 		{
-			cout << 1000 + a * 100;
+			price = 1000 + a * 100;
+			cout << price;
 		}
-		else if (b == c && (a != b || a != c))
+		else if (b==c)
 		{
-			cout << 1000 + b * 100;
+			price = 1000 + b * 100;
+			cout << price;
 		}
-		else if (a == c && (b != c || b != a))
+		else if (c==a)
 		{
-			cout << 1000 + c * 100;
+			price = 1000 + c * 100;
+			cout << price;
 		}
 	}
 }
