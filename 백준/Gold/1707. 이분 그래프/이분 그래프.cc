@@ -2,12 +2,13 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
+
 #define RED 2
 #define BLUE 3
 
-vector<int> vec[20001];        //인접리스트
-int visited[20001];     //방문기록
 int V, E, T, u, v;
+int visited[20001];     //방문기록
+vector<int> vec[20001];        //인접리스트
 void dfs(int start)
 {
     // 방문안한 점이면 RED
@@ -66,7 +67,7 @@ int main()
 
         cout << (check() ? "YES" : "NO") << endl;
 
-        // 벡터와 배열 초기화
+        // 배열 초기화
         for (int i = 0; i <= V; ++i)
         {
             visited[i] = 0;
